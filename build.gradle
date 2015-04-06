@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.8.2'
-  compile project(':JavaNMEAParser')
+  compile project(':javanmeaparser')
 }
 
 task copyResources(type: Copy) {
