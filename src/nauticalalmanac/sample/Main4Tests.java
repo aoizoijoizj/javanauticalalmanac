@@ -42,12 +42,12 @@ public class Main4Tests
       int _minute = utc.get(Calendar.MINUTE); 
       int _second = utc.get(Calendar.SECOND); 
       
-      Core.julianDate(_year, _month, _day, _hour, _minute, _second, 66.5706);
+      Core.julianDate(_year, _month, _day, _hour, _minute, _second, 68.1577);
       Anomalies.nutation();
       Anomalies.aberration();
 
       Core.aries();
-//    Core.sun();
+      Core.sun();
       
 //    Moon.compute(); // Important! Moon is used for lunar distances, by planets and stars.
       
@@ -64,6 +64,7 @@ public class Main4Tests
       double trueOblOfEcl = Context.eps;
       
       System.out.println("-- " + utc.getTime().toString() + ", Mean:" + meanOblOfEcl + ", True:" + trueOblOfEcl + ", Aries GHA:" + Context.GHAAtrue);
+      System.out.println("Sun Decl:" + Context.DECsun);
       
       cal.add(Calendar.DAY_OF_YEAR, 1);
     }
