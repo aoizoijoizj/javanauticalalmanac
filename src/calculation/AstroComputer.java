@@ -19,7 +19,12 @@ import nauticalalmanac.Venus;
 public class AstroComputer
 {
   private static int year = 0, month = 0, day = 0, hour = 0, minute = 0, second = 0;
-  private static double deltaT = 66.4749d; // 2011. Overridden by deltaT system variable.  
+  private static double deltaT = 66.4749d; // 2011. Overridden by deltaT system variable.
+
+  // Updated after the calculate invocation.
+  public static synchronized double getDeltaT() {
+    return deltaT;
+  }
 
   public static synchronized void setDateTime(int y, int m, int d, int h, int mi, int s)
   {
