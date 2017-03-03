@@ -17,7 +17,7 @@ public class Main4Tests
 {
   public static void main(String[] args)
   {
-    int year = 2012;
+    int year = 2017;
     int month = Calendar.JANUARY;
     int day = 1;
     
@@ -30,7 +30,7 @@ public class Main4Tests
     cal.set(Calendar.MINUTE, 0);
     cal.set(Calendar.SECOND, 0);
 
-    for (int yd=0; yd<366; yd++) // 2012 is a leap year
+    for (int yd=0; yd<365; yd++) // 2017 has 365 days
     {
       Calendar utc = new GregorianCalendar(TimeZone.getTimeZone("Etc/UTC"));
       utc.setTimeInMillis(cal.getTimeInMillis()); 
@@ -42,7 +42,7 @@ public class Main4Tests
       int _minute = utc.get(Calendar.MINUTE); 
       int _second = utc.get(Calendar.SECOND); 
       
-      Core.julianDate(_year, _month, _day, _hour, _minute, _second, 68.1577);
+      Core.julianDate(_year, _month, _day, _hour, _minute, _second, 68.5928);
       Anomalies.nutation();
       Anomalies.aberration();
 
@@ -56,7 +56,7 @@ public class Main4Tests
 //    Jupiter.compute();
 //    Saturn.compute();
       
-//    Core.polaris();
+      Core.polaris();
 //    Core.moonPhase();
 //    Core.weekDay();
       
@@ -64,7 +64,8 @@ public class Main4Tests
       double trueOblOfEcl = Context.eps;
       
       System.out.println("-- " + utc.getTime().toString() + ", Mean:" + meanOblOfEcl + ", True:" + trueOblOfEcl + ", Aries GHA:" + Context.GHAAtrue);
-      System.out.println("Sun Decl:" + Context.DECsun);
+      System.out.println("   Polaris D:" + Context.DECpol + ", Z:" + Context.GHApol);
+      System.out.println("   Sun Decl:" + Context.DECsun);
       
       cal.add(Calendar.DAY_OF_YEAR, 1);
     }

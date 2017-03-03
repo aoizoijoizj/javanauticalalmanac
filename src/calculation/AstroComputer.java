@@ -162,8 +162,9 @@ public class AstroComputer
   }
 
   /**
-   * @see http://aa.usno.navy.mil/data/docs/RS_OneYear.php
-   * @see http://www.jgiesen.de/SunMoonHorizon/
+   * See http://aa.usno.navy.mil/data/docs/RS_OneYear.php
+   * <br>
+   * See http://www.jgiesen.de/SunMoonHorizon/
    */
   public static synchronized double[] moonRiseAndSet(double latitude, double longitude)
   {    
