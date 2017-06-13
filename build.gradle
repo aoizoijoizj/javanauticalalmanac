@@ -2,7 +2,7 @@ apply plugin: 'java'
 compileJava.options.encoding = 'ISO-8859-1'
 apply plugin: 'maven'
 
-def userprofile = System.getenv()['USERPROFILE'] // On Windows...
+//def userprofile = System.getenv()['USERPROFILE'] // On Windows...
 
 group = 'oliv.cool.stuff'
 version = '4.0.0.0'
@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.8.2'
-  compile project(':javanmeaparser')
+  compile project(':geomutils')
 }
 
 task copyResources(type: Copy) {
@@ -42,13 +42,13 @@ task copyResources(type: Copy) {
 
 jar.dependsOn(copyResources)
 
-task tellMeProxy (description: "Spits out the proxy settings.") << {
-  try {
-    println "Accessing resources with proxy $proxyHost:$proxyPort"
-    println "UserProfile: " + System.getenv()['USERPROFILE']
-  } catch (Exception e) {
-    println "No proxy"
-  }
-}
-
-compileJava.dependsOn(tellMeProxy)
+//task tellMeProxy (description: "Spits out the proxy settings.") << {
+//  try {
+//    println "Accessing resources with proxy $proxyHost:$proxyPort"
+//    println "UserProfile: " + System.getenv()['USERPROFILE']
+//  } catch (Exception e) {
+//    println "No proxy"
+//  }
+//}
+//
+//compileJava.dependsOn(tellMeProxy)
